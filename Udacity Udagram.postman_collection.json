@@ -1,0 +1,35 @@
+{
+	"info": {
+		"_postman_id": "54cafe61-8452-444b-8032-ca656e347870",
+		"name": "Udacity Udagram",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18006689"
+	},
+	"item": [
+		{
+			"name": "Image Filter",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/filteredimage?image_url=https://images.pexels.com/photos/10402422/pexels-photo-10402422.jpeg?auto=compress",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"filteredimage"
+					],
+					"query": [
+						{
+							"key": "image_url",
+							"value": "https://images.pexels.com/photos/10402422/pexels-photo-10402422.jpeg?auto=compress"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
