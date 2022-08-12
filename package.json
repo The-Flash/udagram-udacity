@@ -10,7 +10,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rimraf www/",
-    "start": "npm run build && node ./www/server.js",
     "build": "npm run clean && tsc",
     "dev": "ts-node-dev --respawn --transpile-only ./src/server.ts"
   },
