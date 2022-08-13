@@ -1,4 +1,4 @@
-import express from 'express';
+import express, { Request, Response } from 'express';
 import bodyParser from 'body-parser';
 import { filterImageFromURL, deleteLocalFiles } from './util/util';
 
@@ -13,11 +13,11 @@ import { filterImageFromURL, deleteLocalFiles } from './util/util';
   // Use the body parser middleware for post requests
   app.use(bodyParser.json());
 
-  app.get("/filteredimage", async (req, res) => {
+  app.get("/filteredimage", async (req: Request, res: Response) => {
     const { image_url } = req.query;
     try {
       const filePath = await filterImageFromURL(image_url);
-      res.sendFile(filePath, (err) => {
+      res.status(200).sendFile(filePath, (err) => {
         if (err) {
           res.status(500).send("An error occurred");
           return;
@@ -32,8 +32,8 @@ import { filterImageFromURL, deleteLocalFiles } from './util/util';
 
   // Root Endpoint
   // Displays a simple message to the user
-  app.get("/", async (req, res) => {
-    res.send("try GET /filteredimage?image_url={{}}")
+  app.get("/", async (req: Request, res: Response) => {
+    res.status(200).send("try GET /filteredimage?image_url={{}}")
   });
 
 
